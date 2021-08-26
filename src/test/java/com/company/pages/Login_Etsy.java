@@ -31,6 +31,9 @@ public class Login_Etsy extends BasePage {
     @FindBy(xpath = "//div[@data-id]//button[@type='submit']")
     public WebElement submitSearchButton;
 
+    @FindBy(xpath = "//span[.='Back to School Trends']")
+    public WebElement backToSchoolButton;
+
     //homepage locators
 
     @FindBy(xpath = "//span[@class='wt-tooltip wt-tooltip--disabled-touch']//span[@class='etsy-icon']")

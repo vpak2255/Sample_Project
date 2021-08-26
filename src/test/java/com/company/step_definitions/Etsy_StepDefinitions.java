@@ -66,5 +66,12 @@ public class Etsy_StepDefinitions {
         Assert.assertTrue(actualTitle.contains(itemName));
     }
 
+    @When("user clicks on Back To School Trends button")
+    public void user_clicks_on_back_to_school_trends_button() {
+        wait.until(ExpectedConditions.visibilityOf(login.backToSchoolButton));
+        login.backToSchoolButton.click();
+
+   //     System.out.println("actual title: " + Driver.getDriver().getTitle());
+    }
 
 }
