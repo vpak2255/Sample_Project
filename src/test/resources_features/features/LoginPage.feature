@@ -1,8 +1,8 @@
+@login_page
 Feature: Login Page
 
   Background: user is on the login page
     Given user is on the login page
-
 
   Scenario: As a user I should be able to see 6 shopping windows on Login Page
     Then user sees num 6 shopping windows displayed

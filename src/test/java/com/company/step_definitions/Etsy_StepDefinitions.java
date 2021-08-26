@@ -2,6 +2,7 @@ package com.company.step_definitions;
 import com.company.pages.Login_Etsy;
 import com.company.utilities.ConfigurationReader;
 import com.company.utilities.Driver;
+import com.company.utilities.Log;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -19,6 +20,7 @@ public class Etsy_StepDefinitions {
     @Given("user is on the login page")
     public void user_is_on_the_login_page(){
         Driver.getDriver().get(ConfigurationReader.getProperty("etsyUrl"));
+        Log.info("Login page: " + Driver.getDriver().getCurrentUrl() + " opened successfully");
     }
 
     @When("user enters username {string} and password {string}")
