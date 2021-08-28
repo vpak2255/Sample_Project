@@ -10,7 +10,7 @@ Feature: Login Page
   Scenario: As a user I should be able to search any item
     When user enters item name "apple" and clicks enter
     Then user sees title contains "Apple"
-  @back_to_school
-    Scenario: As a user I should be able to click on Back To School Trends button and be navigated to its page
-      When user clicks on Back To School Trends button
-      Then user sees title contains "Back-to-school trends"
+  @Jewelry_&_Accessories
+    Scenario: As a user I should be able to click on Jewelry & Accessories button and be navigated to its page
+      When user clicks on Jewelry Accessories button
+      Then user sees title contains "Jewelry & Accessories"
