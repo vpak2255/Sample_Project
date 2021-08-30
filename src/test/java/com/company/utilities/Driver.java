@@ -6,9 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 public class Driver {
     private Driver() {
@@ -38,7 +42,13 @@ public class Driver {
 
                     case "chrome":
                         WebDriverManager.chromedriver().setup();
-                        driverPool.set(new ChromeDriver());
+                        LoggingPreferences preferences = new LoggingPreferences();
+                        preferences.enable(LogType.PERFORMANCE, Level.ALL);
+                        ChromeOptions option = new ChromeOptions();
+                        option.setCapability(CapabilityType.LOGGING_PREFS, preferences);
+                        option.setCapability("goog:loggingPrefs", preferences);
+                        option.addArguments();
+                        driverPool.set(new ChromeDriver(option));
                         driverPool.get().manage().window().maximize();
                         break;
 

@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.xml.bind.SchemaOutputResolver;
+
 public class Etsy_StepDefinitions {
 
     Login_Etsy login = new Login_Etsy();
@@ -49,6 +51,7 @@ public class Etsy_StepDefinitions {
         for (WebElement eachElem : login.shoppingWindows) {
            count ++;
         }
+        System.out.println("Count : " + count);
         Assert.assertTrue(count == num);
     }
 
