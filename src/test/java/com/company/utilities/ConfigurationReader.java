@@ -16,8 +16,8 @@ public class ConfigurationReader {
         try {
             FileInputStream file = new FileInputStream("configuration.properties");
             properties.load(file);
-            Files.newBufferedWriter(Paths.get("src/test/resources/logs.txt"), StandardOpenOption.TRUNCATE_EXISTING);
-            logfile = new FileOutputStream("src/test/resources/logs.txt", true);
+            Files.newBufferedWriter(Paths.get("src/network-logs/network-logs-current.txt"), StandardOpenOption.TRUNCATE_EXISTING);
+            logfile = new FileOutputStream("src/network-logs/network-logs-current.txt", true);
             file.close();
         } catch (Exception e) {
             e.printStackTrace();

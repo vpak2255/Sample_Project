@@ -20,9 +20,9 @@ import static com.company.utilities.NetworkLogs.printLog;
 
 public class Hooks {
 
-    @Before
-    public void setUpScenario() throws FileNotFoundException {
-    }
+//    @Before
+//    public void setUpScenario() throws FileNotFoundException {
+//    }
 
     @After
     public void tearDownScenario(Scenario scenario) throws IOException {
