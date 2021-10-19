@@ -4,16 +4,12 @@ package com.company.step_definitions;
 import com.company.utilities.ConfigurationReader;
 import com.company.utilities.Driver;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Date;
 
 import static com.company.utilities.NetworkLogs.printLog;
@@ -25,7 +21,7 @@ public class Hooks {
 //    }
 
     @After
-    public void tearDownScenario(Scenario scenario) throws IOException {
+    public void tearDownScenario(Scenario scenario) {
         if (scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "img/jpeg", scenario.getName());
